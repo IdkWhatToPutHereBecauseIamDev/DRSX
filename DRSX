@@ -1,0 +1,16 @@
+local e = Instance.new("RemoteEvent")
+e.Parent = game.ReplicatedStorage
+
+game.Players.PlayerAdded:Connect(function(p)
+    p.Chatted:Connect(function(m)
+        if string.find(m, "I AM A HACKER") then
+            for i = 1, 10 do
+                game:GetService("Chat"):Chat(p, p.Name .. " I AM A HACKER", Enum.ChatColor.Red)
+                print(p.Name .. " I AM A HACKER")
+            end
+            
+            wait(2)
+            p:Kick("Detected Exploiting Behavior")
+        end
+    end)
+end)
